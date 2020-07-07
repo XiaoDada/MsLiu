@@ -247,13 +247,24 @@ class DragImageView : ImageView {
                 top = top
                 bottom = bottom
             }
-            if (isControl_H || isControl_V) setPosition(left, top, right, bottom)
-            current_x = event.rawX.toInt()
-            current_y = event.rawY.toInt()
+
+            Log.e("fengda","isControl_H=="+isControl_H+"   isControl_V=="+isControl_V)
+            if (isControl_H || isControl_V)
+                this.setPosition(left, top, right, bottom)
+                Log.e(
+                    "fengda",
+                    "left==$left   top==$top right==$right   bottom==$bottom"
+                )
+
+
+                current_x = event.rawX.toInt()
+                current_y = event.rawY.toInt()
+
+
         } else if (mode == MODE.ZOOM) {
             afterLenght = getDistance(event) // 获取两点的距离
             val gapLenght = afterLenght - beforeLenght // 变化的长度
-            if (Math.abs(gapLenght) > 5f) {
+            if (Math.abs(gapLenght) > 10f) {
                 scale_temp = afterLenght / beforeLenght // 求的缩放的比例
                 setScale(scale_temp)
                 beforeLenght = afterLenght
@@ -303,6 +314,7 @@ class DragImageView : ImageView {
             } else {
                 false
             }
+            Log.e("fengda","current_Left="+current_Left+"  current_Right="+current_Right+" screen_W="+screen_W)
             isControl_H = if (current_Left <= 0 && current_Right >= screen_W) {
                 true // 开启水平监控
             } else {
