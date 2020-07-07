@@ -46,6 +46,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onButtonClick"
-        android:text="CoordinatorLayout Activity" />
+        android:text="ScroolView嵌套ListView解决办法" />
 
 </LinearLayout>

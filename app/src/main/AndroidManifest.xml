@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".touchtest.FirstActivity" />
+        <activity android:name=".touchtest.SecondActivity" />
+        <activity android:name=".touchtest.ThreeActivity" />
+        <activity android:name=".touchtest.FourActivity" />
+        <activity android:name=".touchtest.FiveActivity" />
     </application>
 
 </manifest>
