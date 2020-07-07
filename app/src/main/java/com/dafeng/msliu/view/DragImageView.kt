@@ -20,7 +20,7 @@ import android.widget.ImageView
  * invalidate方法：用于刷新当前控件,
  *
  *
- * @author zhangjia
+ * @author da.feng
  */
 class DragImageView : ImageView {
     private var mActivity: Activity? = null
@@ -53,7 +53,6 @@ class DragImageView : ImageView {
     /**
      * 模式 NONE：无 DRAG：拖拽. ZOOM:缩放
      *
-     * @author zhangjia
      */
     private enum class MODE {
         NONE, DRAG, ZOOM
@@ -71,7 +70,9 @@ class DragImageView : ImageView {
     /**
      * 构造方法
      */
-    constructor(context: Context?) : super(context) {}
+    constructor(context: Context?) : super(context) {
+
+    }
 
     fun setmActivity(mActivity: Activity?) {
         this.mActivity = mActivity

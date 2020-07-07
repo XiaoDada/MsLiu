@@ -3,6 +3,7 @@ package com.dafeng.msliu.view
 import android.annotation.TargetApi
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.widget.ScrollView
 
@@ -35,9 +36,10 @@ class ScrollViewVertical : ScrollView {
     private var xLast = 0f // 滑动距离及坐标
     private var yLast = 0f
     override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
-
+        var intercept = false
         when (ev.action) {
             MotionEvent.ACTION_DOWN -> {
+                intercept=false
                 xDistance =0f
                 yDistance = 0f
                 xLast = ev.x
@@ -66,15 +68,22 @@ class ScrollViewVertical : ScrollView {
 
                 val Q =
                     Math.asin(b / c) //a、b边的夹角度数(Q / Math.PI * 180这个才是人类常用的角度)
-
+               Log.e("fengda","curX= "+curX+"  curY="+curY
+                       +" yDistance="+yDistance+" xDistance="+xDistance
+                       +" xLast="+xLast+" yLast="+yLast
+                       +" Q="+Math.abs(Q / Math.PI * 180) )
                 if (Math.abs(Q / Math.PI * 180) > 45  && 0f != xDistance) {
-                    return false
+                    intercept=true
                 }
 
             }
 
+            MotionEvent.ACTION_UP,MotionEvent.ACTION_CANCEL->{
+                intercept=false
+            }
+
         }
-        return super.onInterceptTouchEvent(ev)
+        return false
     }
 
 //    override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
