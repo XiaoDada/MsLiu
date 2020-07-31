@@ -21,6 +21,7 @@
         <activity android:name=".touchtest.ThreeActivity" />
         <activity android:name=".touchtest.FourActivity" />
         <activity android:name=".touchtest.FiveActivity" />
+        <activity android:name=".touchtest.SixActivity" />
     </application>
 
 </manifest>

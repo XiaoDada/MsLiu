@@ -1,0 +1,46 @@
+package com.dafeng.msliu.touchtest.adapter;
+
+import android.content.Context;
+
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
+
+/**
+ * @ explain:
+ * @ author：xujun on 2016/10/17 20:33
+ * @ email：gdutxiaoxu@163.com
+ */
+public class RecyclerUtils {
+
+    public static void init(RecyclerView recyclerView){
+        Context context = recyclerView.getContext();
+
+        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        if(layoutManager ==null){
+            layoutManager=new LinearLayoutManager(context);
+            DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(context,
+                    LinearLayoutManager.VERTICAL);
+            recyclerView.addItemDecoration(dividerItemDecoration);
+            recyclerView.setLayoutManager(layoutManager);
+        }else{
+            if(layoutManager instanceof LinearLayoutManager){
+                DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(context,
+                        LinearLayoutManager.VERTICAL);
+                recyclerView.addItemDecoration(dividerItemDecoration);
+            }else if(layoutManager instanceof GridLayoutManager){
+                DividerGridItemDecoration dividerGridItemDecoration = new
+                        DividerGridItemDecoration(context);
+                recyclerView.addItemDecoration(dividerGridItemDecoration);
+
+            }else if(layoutManager instanceof StaggeredGridLayoutManager){
+                DividerGridItemDecoration dividerGridItemDecoration = new
+                        DividerGridItemDecoration(context);
+                recyclerView.addItemDecoration(dividerGridItemDecoration);
+            }
+        }
+    }
+}

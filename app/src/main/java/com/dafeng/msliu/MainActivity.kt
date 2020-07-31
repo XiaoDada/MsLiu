@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             R.id.btn_third -> jump(ThreeActivity::class.java)
             R.id.btn_four -> jump(FourActivity::class.java)
             R.id.btn_five -> jump(FiveActivity::class.java)
-//            R.id.btn_six -> jump(SixActivity::class.java)
+            R.id.btn_six -> jump(SixActivity::class.java)
             else -> {
             }
         }
