@@ -163,16 +163,17 @@ public class QuoteTextView extends TextView {
                 ellipsized = true;
             }
         }
-        if (!workingText.equals(getText())) {
-            programmaticChange = true;
-            try {
-                setHtmlFromString(toHtml(workingText));
-            } finally {
-                programmaticChange = false;
-            }
-        }else {
-            setHtmlFromString(toHtml(workingText));
-        }
+        setText(workingText);
+//        if (!workingText.equals(getText())) {
+//            programmaticChange = true;
+//            try {
+//                setHtmlFromString(toHtml(workingText));
+//            } finally {
+//                programmaticChange = false;
+//            }
+//        }else {
+//            setHtmlFromString(toHtml(workingText));
+//        }
         isStale = false;
         if (ellipsized != isEllipsized) {
             isEllipsized = ellipsized;

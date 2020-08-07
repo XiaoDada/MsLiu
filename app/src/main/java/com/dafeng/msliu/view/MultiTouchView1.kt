@@ -23,6 +23,9 @@ class MultiTouchView1 :View{
     private var offsetY:Float=0f
     private var downX:Float=0f
     private var downY:Float=0f
+    private var OriginalOffsetX:Float=0f
+    private var OriginalOffsetY:Float=0f
+
 
     constructor(context:Context,attrs:AttributeSet) : super(context, attrs){
          init(context);
@@ -38,12 +41,14 @@ class MultiTouchView1 :View{
     override fun onTouchEvent(event: MotionEvent): Boolean {
         when(event.actionMasked){
             MotionEvent.ACTION_DOWN->{
-                downX=event.x;
-                downY=event.y;
+                downX=event.x
+                downY=event.y
+                OriginalOffsetX=offsetX
+                OriginalOffsetY=offsetY
             }
             MotionEvent.ACTION_MOVE->{
-                offsetX=event.x-downX;
-                offsetY=event.y-downY;
+                offsetX=event.x-downX+OriginalOffsetX
+                offsetY=event.y-downY+OriginalOffsetY
                 invalidate()
             }
 
