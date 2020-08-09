@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.dafeng.msliu.customview.MaterialEditTextActivity
+import com.dafeng.msliu.customview.TabLayoutActivity
 import com.dafeng.msliu.function.activity.ViewpagePagingActivity
 import com.dafeng.msliu.touchtest.*
 
@@ -23,6 +25,8 @@ class MainActivity : AppCompatActivity() {
             R.id.btn_five -> jump(FiveActivity::class.java)
             R.id.btn_six -> jump(MorePointViewActivity::class.java)
             R.id.btn_seven -> jump(ViewpagePagingActivity::class.java)
+            R.id.btn_nine -> jump(MaterialEditTextActivity::class.java)
+            R.id.btn_ten -> jump(TabLayoutActivity::class.java)
             else -> {
             }
         }

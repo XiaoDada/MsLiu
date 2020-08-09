@@ -16,6 +16,7 @@ class ChildViewPager : ViewPager {
     constructor(context: Context?, attrs: AttributeSet?) : super(context!!, attrs) {
     }
 
+
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
         val curPosition: Int
         when (ev.action) {

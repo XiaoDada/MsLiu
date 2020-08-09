@@ -24,6 +24,8 @@
         <activity android:name=".touchtest.SixActivity" />
         <activity android:name=".touchtest.MorePointViewActivity" />
         <activity android:name=".function.activity.ViewpagePagingActivity" />
+        <activity android:name=".customview.MaterialEditTextActivity" />
+        <activity android:name=".customview.TabLayoutActivity" />
     </application>
 
 </manifest>

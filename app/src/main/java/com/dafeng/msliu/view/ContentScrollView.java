@@ -21,6 +21,7 @@
 package com.dafeng.msliu.view;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewParent;
@@ -28,6 +29,7 @@ import android.widget.ScrollView;
 
 public class ContentScrollView extends ScrollView {
 
+    Paint paint=new Paint(Paint.ANTI_ALIAS_FLAG);
     public interface OnScrollChangedListener {
         void onScrollChanged(int l, int t, int oldl, int oldt);
     }
