@@ -24,6 +24,12 @@ class ViewpagePagingActivity : AppCompatActivity() {
         "热门", "iOS", "Android"
         , "前端", "后端", "设计", "工具资源"
     )
+
+
+    private val mTitles1 = arrayOf(
+         "后端", "设计", "工具资源","热门", "iOS", "Android"
+        , "前端"
+    )
     private val mFragments =
         ArrayList<Fragment>()
     private var mAdapter: Viewpage2Adapter? = null
@@ -57,7 +63,8 @@ class ViewpagePagingActivity : AppCompatActivity() {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels)
                 if (mFragments.size - 1 == position && positionOffsetPixels == 0) {
                     ToastUtils.showShort("滑动到最后一页了")
-                    for (title in mTitles) {
+                    mFragments.clear()
+                    for (title in mTitles1) {
                         mFragments.add(SimpleCardFragment.getInstance(title))
                     }
                     mAdapter!!.notifyDataSetChanged()
